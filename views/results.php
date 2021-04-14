@@ -14,10 +14,20 @@
     </tr>
 </table>
 
-<h2>История вводимых чисел</h2>
+<h2>История вводимых чисел и ответов экстрасенсов</h2>
 <table class="table table-bordered">
+    <th>Ваши числа</th>
     <?php 
-    foreach ($history as $value) { ?>
-    <tr><td><?= $value ?></td></tr>
+    for($i = 1; $i <= 16; $i++) {
+        echo '<th>Экстрасенс ' . $i . '</th>';
+    }
+    ?>
+    <?php 
+    foreach ($history as $row) { ?>
+    <tr>
+        <?php foreach ($row as $cell) { ?>
+        <td><?= $cell ?></td>
+        <?php } ?>
+    </tr>
     <?php } ?>
 </table>

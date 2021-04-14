@@ -31,7 +31,7 @@
             url: '\ajaxGetAnswer',
             type: 'POST',
             success: function(res) {
-                if (res != 'error') $('#reiting').html(res);
+                if (res != 'error_0') { $('#reiting').html(res); }
             }
         });
     });

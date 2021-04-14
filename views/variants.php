@@ -27,9 +27,18 @@
             data: {'answer' : answer},
             type: 'POST',
             success: function(res) {
-                $('#reiting').html(res);
-                $('#variants').hide();
-                $('#intro').show();
+                switch (res) {
+                    case 'error_0' : break;
+                    case 'error_1' :
+                        console.log('error_1');
+                        $('#UserVariantBlock').append('<p style="color:red">Число должно быть положительным и двузначным!</p>');
+                        break;
+                    default : 
+                        $('#reiting').html(res);
+                        $('#variants').hide();
+                        $('#intro').show();
+                        break;
+                }
             }
         });
     });

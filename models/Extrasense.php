@@ -6,6 +6,7 @@ class Extrasense
 {
     private $_credibility;
     private $_lastVariant;
+    private $_historyVariants;
     
     public function __construct() {
         $this->_credibility = 0;
@@ -24,7 +25,12 @@ class Extrasense
     }
 
     public function getVariant() {
-        $this->_lastVariant = random_int(10, 99);
+        $this->_lastVariant       = random_int(10, 99);
+        $this->_historyVariants[] = $this->_lastVariant;
         return $this->_lastVariant;
+    }
+
+    public function getHistory() {
+        return $this->_historyVariants;
     }
 }
