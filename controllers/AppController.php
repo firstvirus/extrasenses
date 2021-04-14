@@ -20,6 +20,7 @@ class AppController
             );
         }
         session_destroy();
+        header("Location: /");
     }
 
     public function actionAjaxReady() {
